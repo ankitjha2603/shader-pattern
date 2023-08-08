@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shader pattern</title>
+    <link rel="icon" type="image/png" href="./pattern.884a007f.png" />
+    <link rel="stylesheet" href="./index.8e498f34.css" />
+    <title></title>
+    <meta name="author" content="ankitjha2603" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Explore mesmerizing dynamic patterns created using shaders in this Three.js project. Interact, customize, and immerse yourself in the world of real-time visual artistry."
+    />
+    <meta
+      name="keywords"
+      content="three.js, html, css, javascript, OrbitControls, shader"
+    />
+    <meta property="og:title" content="ShadeCraft: Dynamic Designs" />
+    <meta
+      property="og:description"
+      content="Explore mesmerizing dynamic patterns created using shaders in this Three.js project. Interact, customize, and immerse yourself in the world of real-time visual artistry."
+    />
+    <meta
+      property="og:url"
+      content="https://ankitjha2603.github.io/shader-pattern"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://ankitjha2603.github.io/sitemap.xml"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4J64SC1QY7"
+    ></script>
+    <script>
+      function a() {
+        dataLayer.push(arguments);
+      }
+      (window.dataLayer = window.dataLayer || []),
+        a("js", new Date()),
+        a("config", "G-4J64SC1QY7");
+    </script>
+    <meta
+      name="google-site-verification"
+      content="5QsjbXuM1buDwEtnxWDKN9dE1qgf_dgz646EdwUxSWg"
+    />
+  </head>
+  <body></body>
+  <script id="vertexShader" type="vertex">
+    uniform float u_time;
+    void main() {
+      float newx = sin(position.x*u_time)*sin(position.y*u_time);
+      vec3 newPosition = vec3(newx, position.y, position.z);
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+    }
+  </script>
+  <script id="fragmentShader" type="fragment">
+    uniform float u_time;
+    void main() {
+        gl_FragColor = vec4(1.0,1.0,1.0,1.0);
+    }
+  </script>
+  <script src="./index.a90fe286.js" type="module"></script>
+</html>
